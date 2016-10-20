@@ -3,6 +3,7 @@ module.exports = {
         appSecret: 'af4...fa'
     },
     sage: {
-        endpoint: 'calamar.io/endpoint'
+        url: 'calamar.io/endpoint',
+        confidenceTreshold: 0.7
     }
 };

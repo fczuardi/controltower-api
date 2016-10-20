@@ -132,7 +132,13 @@ api.post('/v1/customers', req =>
                 createSpell(
                     fbUser.name, 'Magically created spell for a new customer'
                     ).then(spell => {
-                        const magicalBot = { ...faqBot, sage: { spellId: spell } };
+                        const magicalBot = { ...faqBot,
+                                             sage: {
+                                                 spellId: spell,
+                                                 url: config.sage.url,
+                                                 confidenceTreshold: config.sage.confidenceTreshold
+                                             }
+                                        };
                         return createBot(dynamo, customer.id, magicalBot).then(bot =>
                         ({
                             ...customer,

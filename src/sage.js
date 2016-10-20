@@ -1,7 +1,7 @@
 import rp from 'request-promise';
 import config from '../config-sample';
 
-const SAGE_URL = config.sage.endpoint;
+const SAGE_URL = config.sage.url;
 
 // Creates a new spell (training file) OK
 const createSpell = (spellName, description) => {
